@@ -1,0 +1,11 @@
+﻿<Window x:Class="TestApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:TestApp"
+        Title="MainWindow" Height="350" Width="525" Icon="Resource/Down_Arrow_Icon.png" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <controls:MainUpdateUserControl x:Name="UpdateUserControl">
+            
+        </controls:MainUpdateUserControl>
+    </Grid>
+</Window>
