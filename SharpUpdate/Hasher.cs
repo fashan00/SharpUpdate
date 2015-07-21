@@ -19,19 +19,30 @@ namespace SharpUpdate
     {
         internal static string HashFile(string filePath, HashType algo)
         {
+            string hexStr;
+
+            FileStream fstream = new FileStream(filePath, FileMode.Open);
+
             switch (algo)
             {
                 case HashType.MD5:
-                    return MD5.Create().ComputeHash(new FileStream(filePath, FileMode.Open)).ToHex(false);
+                    hexStr = MD5.Create().ComputeHash(fstream).ToHex(true);
+                    break;
                 case HashType.SHA1:
-                    return SHA1.Create().ComputeHash(new FileStream(filePath, FileMode.Open)).ToHex(false);
+                    hexStr = SHA1.Create().ComputeHash(fstream).ToHex(true);
+                    break;
                 case HashType.SHA512:
-                    return SHA512.Create().ComputeHash(new FileStream(filePath, FileMode.Open)).ToHex(false);
+                    hexStr = SHA512.Create().ComputeHash(fstream).ToHex(true);
+                    break;
 
                 default:
-                    return "";
+                    hexStr = "";
+                    break;
             }
 
+            fstream.Close();
+
+            return hexStr;
         }
 
         private static string ToHex(this byte[] bytes, bool upperCase)

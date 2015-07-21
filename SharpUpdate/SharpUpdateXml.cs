@@ -10,7 +10,7 @@ using System.Xml.Linq;
 
 namespace SharpUpdate
 {
-    public class SharpUpdateXml
+    internal class SharpUpdateXml
     {
         private Version version;
         private Uri uri;
@@ -29,7 +29,7 @@ namespace SharpUpdate
             get { return this.uri; }
         }
 
-        internal string FileName
+        internal string  FileName
         {
             get { return this.fileName; }
         }
@@ -93,8 +93,8 @@ namespace SharpUpdate
 
                 if(el == null) return null;
 
-                version = Version.Parse(el.Element("latestVersion").Value);
-                url = el.Element("latestVersionUrl").Value;
+                version = Version.Parse(el.Element("version").Value);
+                url = el.Element("url").Value;
                 fileName = el.Element("fileName").Value;
                 md5 = el.Element("md5").Value;
                 description = el.Element("description").Value;

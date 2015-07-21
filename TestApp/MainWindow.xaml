@@ -4,8 +4,10 @@
         xmlns:controls="clr-namespace:TestApp"
         Title="MainWindow" Height="350" Width="525" Icon="Resource/Down_Arrow_Icon.png" WindowStartupLocation="CenterScreen">
     <Grid>
-        <controls:MainUpdateUserControl x:Name="UpdateUserControl">
+        <!--<controls:MainUpdateUserControl x:Name="UpdateUserControl">
             
-        </controls:MainUpdateUserControl>
+        </controls:MainUpdateUserControl>-->
+        <Button Name="CheckUpdateBtn"  Content="Check For Update" HorizontalAlignment="Center" VerticalAlignment="Top" Width="116" Margin="0,191,0,0" Height="39" Click="CheckUpdateBtn_Click"/>
+        <Label Name="Label" Content="Label" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,76,0,0"/>
     </Grid>
 </Window>

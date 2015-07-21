@@ -20,14 +20,83 @@ namespace TestApp
     /// <summary>
     /// MainWindow.xaml 的互動邏輯
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, ISharpUpdatable
     {
+        //public MainWindow()
+        //{
+        //    InitializeComponent();
+
+        //    UpdateUserControl.ApplicationIcon = new Image();
+        //    UpdateUserControl.ApplicationIcon.Source = this.Icon;
+        //}
+
+        private SharpUpdater updater;
+
         public MainWindow()
         {
             InitializeComponent();
 
-            UpdateUserControl.ApplicationIcon = new Image();
-            UpdateUserControl.ApplicationIcon.Source = this.Icon;
+            this.Label.Content = this.ApplicationAssembly.GetName().Version.ToString();
+
+            updater = new SharpUpdater(this);
+        }
+
+        private void CheckUpdateBtn_Click(object sender, RoutedEventArgs e)
+        {
+            updater.DoUpdate();
+        }
+
+        public string ApplicationName
+        {
+            get
+            {
+                return "TestApp";
+            }
+        }
+
+        public string ApplicationID
+        {
+            get
+            {
+                return "testApp";
+            }
+        }
+
+        public Assembly ApplicationAssembly
+        {
+            get
+            {
+                return Assembly.GetExecutingAssembly();
+            }
+        }
+
+        private Image icon;
+        public Image ApplicationIcon
+        {
+            get
+            {
+                return this.icon;
+            }
+            set
+            {
+                this.icon = value;
+            }
+        }
+
+        public Uri UpdateXmlLocation
+        {
+            get
+            {
+                return new Uri("http://file.hamastar.com.tw/hashan00/UpdateTest/update.xml");
+            }
+        }
+
+        public Window Context
+        {
+            get
+            {
+                return this;
+            }
         }
         
         

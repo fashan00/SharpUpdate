@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
+             x:ClassModifier="internal"
              d:DesignHeight="300" d:DesignWidth="300" ResizeMode="NoResize" Width="290" Height="283" ShowInTaskbar="False" WindowStartupLocation="CenterOwner">
     <Grid>
         <Image HorizontalAlignment="Left" Height="80" Margin="12,12,0,0" VerticalAlignment="Top" Width="80" Stretch="Fill" Source="Resources/update.gif" />

@@ -18,10 +18,9 @@ namespace SharpUpdate
     /// <summary>
     /// SharpUpdateInfo.xaml 的互動邏輯
     /// </summary>
-    public partial class SharpUpdateInfoWindow : Window
+    internal partial class SharpUpdateInfoWindow : Window
     {
-    
-        public void SharpUpdateInfo(ISharpUpdatable applicationInfo, SharpUpdateXml updateInfo)
+        internal SharpUpdateInfoWindow(ISharpUpdatable applicationInfo, SharpUpdateXml updateInfo)
         {
             InitializeComponent();
 

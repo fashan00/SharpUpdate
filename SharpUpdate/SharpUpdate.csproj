@@ -53,12 +53,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SharpUpdateAcceptWindow.xaml.cs">
+      <DependentUpon>SharpUpdateAcceptWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SharpUpdateDownloadWindow.xaml.cs">
+      <DependentUpon>SharpUpdateDownloadWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SharpUpdateInfoWindow.xaml.cs">
       <DependentUpon>SharpUpdateInfoWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SharpUpdater.cs" />
     <Compile Include="SharpUpdateXml.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="SharpUpdateAcceptWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SharpUpdateDownloadWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SharpUpdateInfoWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
